@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //获取URL中的信息
+    /*function GetRequest() {
+        let url = location.href; //获取url中"?"符后的字串
+        let theRequest = {},num;
+        num=url.indexOf("?");
+        if (url.indexOf("?") !== -1) {
+            let str = url.substr(num+1);
+            let strs = str.split("&");
+            for(let i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]] =strs[i].split("=")[1];
+            }
+        }
+        return theRequest;
+    }
+    let Request = {};
+    Request = GetRequest();// var id=Request["id"];
+    let activeId,userId,token;
+    activeId = Request['activeId'];
+    userId = Request['userId'];
+    token = Request['token'];*/
+    //判断是不是回文数（忽略字符，空格，大小写）
+    /*function palindrome(str) {
+        astr=str.replace(/[^0-9A-Za-z]/g,'').toLowerCase();
+        bstr=astr.split("").reverse().join("");
+        if(astr===bstr){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    console.log(palindrome("1 eye for of 1 eye."));*/
+    /*function findLongestWord(str) {
+        str=str.split(' ');
+        var arr=str.sort(function(a,b){
+            return b.length-a.length;
+        });
+        str=arr[0];
+        return str.length;
+    }
+
+    console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));*/
+    function mutation(arr) {
+        var astr=arr[0].toLowerCase();
+        var bstr=arr[1].toLowerCase();
+        for(var i=0;i<bstr.length;i++){
+            if(astr.indexOf(bstr[i]) == -1){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    }
+
+    mutation(["hello", "hey"]);
+</script>
+</body>
+</html>

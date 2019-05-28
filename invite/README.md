@@ -1,2 +1,0 @@
-# eDrMd
-eDrMd_App

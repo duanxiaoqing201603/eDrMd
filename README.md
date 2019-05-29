@@ -1,7 +1,6 @@
 # activity
 
-Creating a new branch is quick.
-Creating a new branch is quick AND simple.
+off-
 
 > A Vue.js project
 

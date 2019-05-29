@@ -1,5 +1,7 @@
 # activity
 
+Creating a new branch is quick.
+
 > A Vue.js project
 
 ## Build Setup

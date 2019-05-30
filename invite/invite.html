@@ -527,19 +527,19 @@
             type: "post",
             contentType: 'application/json',
             data: JSON.stringify({
-                /*'userId':userId,
+                'userId':userId,
                     'activeId':activeId,
-                    'token':token*/
-                "userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"
+                    'token':token
+                /*"userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"*/
             }),
             dataType: "json",
             headers: {'Content-Type': 'application/json'},
             success: function (data) {
-                console.log(data);
+
                 shareUrl = data.data.shareUrl;
                 //弹出礼物领取
                 alertArrary = data.data.alertArray;//数组为空，表示已经领取，不再领取
-                console.log(alertArrary.length);
+
                 let getGift = document.getElementById("getGift");
 
                 let days = document.getElementById("days");//领取会员的天数

@@ -231,7 +231,7 @@
     }
 
     //测试环境39.105.11.4和线上环境IP 59.110.163.242
-    let IP="http://59.110.163.242";
+    let IP="http://39.105.11.4";
 
     //获取用户信息
     function GetRequest() {
@@ -264,7 +264,7 @@
                 content: '手机号码有误，请重新输入'
                 ,skin: 'msg'
                 ,time: 2 //2秒后自动关闭);
-        });
+            });
             mobile.val('');
             return false;
         }
@@ -333,17 +333,17 @@
             dataType: "json",
             headers:{'Content-Type':'application/json'},
             success:function(data){
-                location.href='https://sj.qq.com/myapp/detail.htm?apkName=com.boyajunyi.edrmd';
-            },
-            error:function(data){
-                if(data.message!=='成功'){
+                if(data.status==='0000'){
+                    location.href='https://sj.qq.com/myapp/detail.htm?apkName=com.boyajunyi.edrmd';
+                }else{
                     layer.open({
                         content:'验证码错误',
                         skin:'msg',
                         time:2
                     })
                 }
-
+            },
+            error:function(data){
             }
         })
     });

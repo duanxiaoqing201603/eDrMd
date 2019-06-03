@@ -43,7 +43,7 @@
         .loading {
             position: fixed;
             top: 0;
-            background: rgba(0, 0, 0, .13);
+            background: rgba(0, 0, 0, .4);
             height: 100%;
             width: 100%;
             display: none;
@@ -238,7 +238,7 @@
         .getGift {
             position: fixed;
             top: 0;
-            background: rgba(0, 0, 0, .13);
+            background: rgba(0, 0, 0, .4);
             height: 100%;
             width: 100%;
             display: none;
@@ -343,7 +343,7 @@
         }
 
         .layui-m-layer .layui-m-layershade {
-            background-color: rgba(0, 0, 0, .13);
+            background-color: rgba(0, 0, 0, .4);
         }
     </style>
 </head>
@@ -351,7 +351,7 @@
 <section class="invite" id="invite">
     <section class="top">
         <img src="./tinified/1-1.png"/>
-        <section class="day" id="day">再邀请<span id="inviteNo"></span>名好友，您就可以获得<span id="dayNo"></span>天会员</section>
+        <section class="day" id="day">再邀请<span id="inviteNo">1</span>名好友，您就可以获得<span id="dayNo">3</span>天会员</section>
         <section class="progress">
             <section class="back">
                 <section class="fore" id="foreWidth"></section>
@@ -359,7 +359,7 @@
             <section class="per"><span id="perFirst">1</span>/<span id="perSecond">1</span></section>
         </section>
         <section class="invited">
-            <p>已邀请<span id="joined"></span>人</p>
+            <p>已邀请<span id="joined">0</span>人</p>
             <p id="rule">活动规则</p>
         </section>
     </section>
@@ -441,23 +441,23 @@
         document.documentElement.style.fontSize = winW / desW * 100 + "px";
     }(375);
     //测试环境39.105.11.4 线上环境IP 59.110.163.242
-    let IP="http://59.110.163.242";
+    var IP="http://39.105.11.4";
 
     //获取用户信息
     function GetRequest() {
-        let url = location.href; //获取url中"?"符后的字串
-        let theRequest = {},num;
+        var url = location.href; //获取url中"?"符后的字串
+        var theRequest = {},num;
         num=url.indexOf("?");
         if (url.indexOf("?") !== -1) {
-            let str = url.substr(num+1);
-            let strs = str.split("&");
+            var str = url.substr(num+1);
+            var strs = str.split("&");
             for(let i = 0; i < strs.length; i ++) {
                 theRequest[strs[i].split("=")[0]] =strs[i].split("=")[1];
             }
         }
         return theRequest;
     }
-    let Request = {};
+    var Request = {};
     Request = GetRequest();// var id=Request["id"];
     let activeId,userId,token;
     activeId = Request['activeId'];
@@ -465,50 +465,65 @@
     token = Request['token'];
 
     //分享地址
-    let shareUrl = '';
+    var shareUrl = '';
 
 
 
     // 立即领取按钮点击事件
-    let collectBthClick = function (alertArrary) {
+    var collectBthClick = function (alertArrary) {
 
     }
     $(function () {
-    	// 存储接口返回的弹框数组
-	    let alertArrary = [];
-    	// 绑定立即领取按钮点击事件
-	    let get =$("#get");
-	    get.click(function (event) {
-	    	// 判断可领取奖励数组长度
+        // 存储接口返回的弹框数组
+        var alertArrary = [];
+        // 绑定立即领取按钮点击事件
+        var get =$("#get");
+        get.click(function (event) {
+            // 判断可领取奖励数组长度
             if(!alertArrary.length) {
-            	alert('没有可以领取的奖励');
-            	return false;
+                alert('没有可以领取的奖励');
+                return false;
             }
-		    let inviteVipId = alertArrary[0].inviteVipId;
-		    $.ajax({
-			    url: IP+"/eDrMd_App/active/v3.0/invite/getVip",
-			    type: "post",
-			    contentType: 'application/json',
-			    data: JSON.stringify({
-				    'userId':userId,
-                            'activeId':activeId,
-                            'token':token,
-                            'inviteVipId':inviteVipId
-				    /*"userId": "164895c5bce1112",
-				    "activeId": "16ac91fda571112",
-				    "token": "1089055c3e7c1837c4fa17936a7425b9a",
-				    "inviteVipId": inviteVipId*/
-			    }),
-			    dataType: "json",
-			    headers: {'Content-Type': 'application/json'},
-			    success: function (data) {
-				    console.log(data);
-				    layer.open({
-					    content: data.message,
-					    skin: 'msg',
-					    time: 2
-				    });
-				    if(data.status==='0000'){
+            var inviteVipId = alertArrary[0].inviteVipId;
+            $.ajax({
+                url: IP+"/eDrMd_App/active/v3.0/invite/getVip",
+                type: "post",
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    'userId':userId,
+                    'activeId':activeId,
+                    'token':token,
+                    'inviteVipId':inviteVipId
+                    /*"userId": "164895c5bce1112",
+                    "activeId": "16ac91fda571112",
+                    "token": "1089055c3e7c1837c4fa17936a7425b9a",
+                    "inviteVipId": inviteVipId*/
+                }),
+                dataType: "json",
+                headers: {'Content-Type': 'application/json'},
+                success: function (data) {
+                    console.log(data);
+                    layer.open({
+                        content: data.message,
+                        skin: 'msg',
+                        time: 2
+                    });
+                    var total = document.getElementById("total");//邀请人数的图片
+                    if(data.status==='0000'){
+                        var num=alertArrary[0].inviteNum;
+                        if (num > 0 && num < 2) {
+                            total.src = './tinified/1.png';
+                        } else if (num >= 2 && num < 5) {
+                            total.src = './tinified/2.png';
+                        } else if (num >= 5 && num < 10) {
+                            total.src = './tinified/3.png';
+                        } else if (num >= 10 && num < 15) {
+                            total.src = './tinified/4.png';
+                        } else if (num >= 15 && num < 20) {
+                            total.src = './tinified/5.png';
+                        } else if (num >= 20) {
+                            total.src = './tinified/6.png';
+                        }
                         alertArrary.shift();
                         if(!alertArrary.length) {
                             getGift.style.display = 'none';
@@ -518,56 +533,73 @@
                         }
                     }
 
-			    }
-		    });
-		    return false;
-	    })
+                }
+            });
+            return false;
+        })
         $.ajax({
             url: IP+"/eDrMd_App/active/v3.0/invite/init",
             type: "post",
             contentType: 'application/json',
             data: JSON.stringify({
                 'userId':userId,
-                    'activeId':activeId,
-                    'token':token
-                /*"userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"*/
+                'activeId':activeId,
+                'token':token
+                // "userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"
             }),
             dataType: "json",
             headers: {'Content-Type': 'application/json'},
             success: function (data) {
-
+                //console.log(data);
                 shareUrl = data.data.shareUrl;
                 //弹出礼物领取
                 alertArrary = data.data.alertArray;//数组为空，表示已经领取，不再领取
+                //console.log(alertArrary.length);
+                var getGift = document.getElementById("getGift");
 
-                let getGift = document.getElementById("getGift");
-
-                let days = document.getElementById("days");//领取会员的天数
-                let people = document.getElementById("people");//邀请人数
+                var days = document.getElementById("days");//领取会员的天数
+                var people = document.getElementById("people");//邀请人数
                 if (alertArrary.length !== 0) {
                     getGift.style.display = 'block';
-	                days.innerText = alertArrary[0].vipDay;
-	                people.innerText = alertArrary[0].inviteNum + '人';
+                    days.innerText = alertArrary[0].vipDay;
+                    people.innerText = alertArrary[0].inviteNum + '人';
                 }
-                let giftClose = document.getElementById("giftClose");
+                var giftClose = document.getElementById("giftClose");
                 giftClose.addEventListener("click", function (event) {
                     getGift.style.display = 'none';
                 });
 
                 //页面初始化
-                let total = document.getElementById("total");//邀请人数的图片
-                let inviteNo = document.getElementById("inviteNo"), dayNo = document.getElementById("dayNo"); //inviteNo还差人数 dayNo会员天数
-                let dayInfo = document.getElementById("day");//邀请人数和会员天数的总信息
-                let inviteNum = data.data.inviteNum;//获取后台的邀请人数
-                let foreWidth = document.getElementById("foreWidth");//进度条进度
-                let joined = document.getElementById("joined");//已经邀请人数
-                let perFirst = document.getElementById("perFirst");//分子
-                let perSecond = document.getElementById("perSecond");//分母
+                //var total = document.getElementById("total");//邀请人数的图片
+                var inviteNo = document.getElementById("inviteNo"), dayNo = document.getElementById("dayNo"); //inviteNo还差人数 dayNo会员天数
+                var dayInfo = document.getElementById("day");//邀请人数和会员天数的总信息
+                var inviteNum = data.data.inviteNum;//获取后台的邀请人数
+                var foreWidth = document.getElementById("foreWidth");//进度条进度
+                var joined = document.getElementById("joined");//已经邀请人数
+                var perFirst = document.getElementById("perFirst");//分子
+                var perSecond = document.getElementById("perSecond");//分母
                 /*inviteNum=0;*/
+                //当前领取天数
+                var getNum=data.data.showNum;
+                if (getNum > 0 && getNum < 2) {
+                    total.src = './tinified/1.png';
+                } else if (getNum >= 2 && getNum < 5) {
+                    total.src = './tinified/2.png';
+                } else if (getNum >= 5 && getNum < 10) {
+                    total.src = './tinified/3.png';
+                } else if (getNum >= 10 && getNum < 15) {
+                    total.src = './tinified/4.png';
+                } else if (getNum >= 15 && getNum < 20) {
+                    total.src = './tinified/5.png';
+                } else if (getNum >= 20) {
+                    total.src = './tinified/6.png';
+                }
+
 
                 $(document).attr("title",data.data.name);
                 joined.innerText = inviteNum;
                 perFirst.innerText = inviteNum;
+
                 if (!inviteNum) {
                     inviteNo.innerText = 1;
                     perFirst.innerText = 0;
@@ -578,52 +610,52 @@
                 if (inviteNum > 0 && inviteNum < 2) {
                     inviteNo.innerText = 3 - inviteNum;
                     dayNo.innerText = 10;
-                    total.src = './tinified/1.png';
+                    //total.src = './tinified/1.png';
                     perSecond.innerText = 3;
                 } else if (inviteNum >= 2 && inviteNum < 5) {
                     inviteNo.innerText = 5 - inviteNum;
                     dayNo.innerText = 18;
-                    total.src = './tinified/2.png';
+                    //total.src = './tinified/2.png';
                     perSecond.innerText = 5;
                 } else if (inviteNum >= 5 && inviteNum < 10) {
                     inviteNo.innerText = 10 - inviteNum;
                     dayNo.innerText = 38;
-                    total.src = './tinified/3.png';
+                    //total.src = './tinified/3.png';
                     perSecond.innerText = 10;
                 } else if (inviteNum >= 10 && inviteNum < 15) {
                     inviteNo.innerText = 15 - inviteNum;
                     dayNo.innerText = 60;
-                    total.src = './tinified/4.png';
+                    //total.src = './tinified/4.png';
                     perSecond.innerText = 15;
                 } else if (inviteNum >= 15 && inviteNum < 20) {
                     inviteNo.innerText = 20 - inviteNum;
                     dayInfo.innerHTML = '再邀请<span>' + (20 - inviteNum) + '</span>名好友，您就可以获得季会员'
-                    total.src = './tinified/5.png';
+                    //total.src = './tinified/5.png';
                     perSecond.innerText = 20;
                 } else if (inviteNum >= 20) {
                     dayInfo.innerText = '恭喜您，您已经成为季会员';
-                    total.src = './tinified/6.png';
+                    //total.src = './tinified/6.png';
                     perSecond.innerText = 20;
                 }
-                let width = perFirst.innerText / perSecond.innerText * 100;
+                var width = perFirst.innerText / perSecond.innerText * 100;
                 foreWidth.style.width = (width >= 100 ? '100%' : width + '%');
 
             },
             error: function (data) {
             }
         });
-        let rule = document.getElementById('rule');
+        var rule = document.getElementById('rule');
         rule.addEventListener('click', function () {
-            let ruleBox = document.getElementById('ruleBox');
+            var ruleBox = document.getElementById('ruleBox');
             ruleBox.style.display = 'block';
-            let body = document.getElementById('loading');
+            var body = document.getElementById('loading');
             body.style.display = 'block';
             document.getElementById('close').addEventListener('click', function () {
                 ruleBox.style.display = 'none';
                 body.style.display = 'none';
             });
         });
-        let invite = document.getElementById("next");
+        var invite = document.getElementById("next");
         /*//点击邀请好友，弹出分享
     invite.addEventListener('click',function(e){
         e.preventDefault();
@@ -640,7 +672,7 @@
         invite.addEventListener('click', function (event) {
             event.preventDefault();
             event.stopPropagation();
-            let input = document.createElement('input');
+            var input = document.createElement('input');
             input.setAttribute('value', shareUrl);
             input.setAttribute('readonly', 'readonly');
             document.body.appendChild(input);

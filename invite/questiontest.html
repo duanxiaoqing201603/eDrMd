@@ -6,6 +6,7 @@
 </head>
 <body>
 <p id="getCode">获取验证</p>
+<p id="invite">aa</p>
 <script>
     var getCode=document.getElementById("getCode");
     var i = 10;
@@ -34,7 +35,14 @@
         },1000);
     })
 
-
+    function aa(){
+        console.log(2);
+    }
+    //invite.onclick=aa;
+    invite.onclick=function(){
+        aa();
+    };
+    //clickShareButton();
     //获取URL中的信息
     /*function GetRequest() {
         let url = location.href; //获取url中"?"符后的字串

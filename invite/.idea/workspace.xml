@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6c584a5e-4a39-40bc-babe-7fc465dcff85" name="Default Changelist" comment="领取记录对应图片，验证码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/questiontest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invite-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/invite-register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tinified/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/invite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questiontest.html" beforeDir="false" afterPath="$PROJECT_DIR$/questiontest.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,35 +16,52 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/invite.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="678" column="9" selection-start-line="678" selection-start-column="9" selection-end-line="678" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/invite-register.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="309" column="28" lean-forward="true" selection-start-line="309" selection-start-column="28" selection-end-line="309" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/questiontest.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/invite.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="475">
+                  <caret line="491" column="51" selection-start-line="491" selection-start-column="51" selection-end-line="491" selection-end-column="51" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/invite-register.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="18">
+                  <caret line="227" column="13" lean-forward="true" selection-start-line="227" selection-start-column="13" selection-end-line="227" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/questiontest.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/invite.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="367">
+                  <caret line="665" column="24" selection-start-line="665" selection-start-column="24" selection-end-line="665" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -61,11 +71,12 @@
       <list>
         <option value="$USER_HOME$/Desktop/invite.html" />
         <option value="$USER_HOME$/Desktop/invite-register.html" />
-        <option value="$PROJECT_DIR$/invite.html" />
         <option value="$USER_HOME$/Desktop/1.html" />
         <option value="$PROJECT_DIR$/invite-register11.html" />
         <option value="$PROJECT_DIR$/a.html" />
         <option value="$PROJECT_DIR$/invite-register.html" />
+        <option value="$PROJECT_DIR$/invite.html" />
+        <option value="$PROJECT_DIR$/questiontest.html" />
       </list>
     </option>
   </component>
@@ -81,7 +92,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -93,6 +103,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -131,7 +142,8 @@
       <workItem from="1559187740345" duration="2591000" />
       <workItem from="1559291899569" duration="2168000" />
       <workItem from="1559523362781" duration="8454000" />
-      <workItem from="1559609130064" duration="6176000" />
+      <workItem from="1559609130064" duration="8888000" />
+      <workItem from="1559635706845" duration="3405000" />
     </task>
     <task id="LOCAL-00001" summary="点击立即下载没反映">
       <created>1559292815706</created>
@@ -144,7 +156,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19389000" />
+    <option name="totallyTimeSpent" value="25506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -198,31 +210,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/invite-register11.html">
+    <entry file="file://$PROJECT_DIR$/invite-register11.html" />
+    <entry file="file://$PROJECT_DIR$/invite-register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4716">
-          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state relative-caret-position="18">
+          <caret line="227" column="13" lean-forward="true" selection-start-line="227" selection-start-column="13" selection-end-line="227" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invite.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="678" column="9" selection-start-line="678" selection-start-column="9" selection-end-line="678" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/invite-register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="309" column="28" lean-forward="true" selection-start-line="309" selection-start-column="28" selection-end-line="309" selection-end-column="28" />
+        <state relative-caret-position="475">
+          <caret line="491" column="51" selection-start-line="491" selection-start-column="51" selection-end-line="491" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/questiontest.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="342">
+          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
         </state>
       </provider>
     </entry>

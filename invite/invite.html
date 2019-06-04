@@ -459,10 +459,13 @@
     }
     var Request = {};
     Request = GetRequest();// var id=Request["id"];
-    let activeId,userId,token;
+    var activeId,userId,token,shareDesc,shareImg,shareTitle;
     activeId = Request['activeId'];
     userId = Request['userId'];
     token = Request['token'];
+    shareDesc=Request['shareDesc'];
+    shareImg=Request['shareImg'];
+    shareTitle=Request['shareTitle'];
 
     //分享地址
     var shareUrl = '';
@@ -565,9 +568,9 @@
                     people.innerText = alertArrary[0].inviteNum + '人';
                 }
                 var giftClose = document.getElementById("giftClose");
-                giftClose.addEventListener("click", function (event) {
+                giftClose.onclick=function (event) {
                     getGift.style.display = 'none';
-                });
+                };
 
                 //页面初始化
                 //var total = document.getElementById("total");//邀请人数的图片
@@ -645,7 +648,7 @@
             }
         });
         var rule = document.getElementById('rule');
-        rule.addEventListener('click', function () {
+        rule.onclick=function () {
             var ruleBox = document.getElementById('ruleBox');
             ruleBox.style.display = 'block';
             var body = document.getElementById('loading');
@@ -654,7 +657,7 @@
                 ruleBox.style.display = 'none';
                 body.style.display = 'none';
             });
-        });
+        };
         var invite = document.getElementById("next");
         /*//点击邀请好友，弹出分享
     invite.addEventListener('click',function(e){
@@ -669,7 +672,7 @@
         })
     })*/
 
-        invite.addEventListener('click', function (event) {
+        /*invite.onclick=function (event) {
             event.preventDefault();
             event.stopPropagation();
             var input = document.createElement('input');
@@ -687,7 +690,16 @@
                 });
             }
             document.body.removeChild(input);
-        });
+        };*/
+
+        invite.onclick=function(){
+            clickShareButton({
+                'title':shareTitle,
+                'descr':shareDesc,
+                'thumImage':shareImg,
+                'webPageUrl':shareUrl
+            });
+        };
         //解决图片点击预览(QQ浏览器)
         $("img").click(function(e){
             e.preventDefault();

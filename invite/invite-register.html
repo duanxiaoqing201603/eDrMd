@@ -27,11 +27,13 @@
         body {
             font-size: 0.14rem;
             background: #fff;
+
         }
 
         button {
             border: none;
             outline: none;
+            background-color: transparent;
         }
         a, a:hover, a:active, a:target {
             text-decoration: none;
@@ -176,7 +178,7 @@
     <section class="middle">
         <h3>注册账号</h3>
         <div class="telNum"><span>+86</span><input type="text" placeholder="输入手机号" id="mobile"/></div>
-        <p id="getCode">获取验证</p>
+        <button id="getCode">获取验证</button>
         <div class="container" id="test">
             <div class="val-box" id="val-box">
                 <input id="val-code-input" type="text" maxlength="6" onkeyup="checkForNum(this)"
@@ -257,7 +259,8 @@
 
     $(document).attr("title",activeName);
     //发送验证码
-    $("#getCode").on('click', function () {
+	var getCode=$("#getCode");
+    getCode.on('click', function () {
         let mobile = $('#mobile'),phone=mobile.val().replace(/(^\s*)|(\s*$)/g, "");
         if(!(/^1[34578]\d{9}$/.test(phone))){
             layer.open({
@@ -277,7 +280,7 @@
                 'activeId':activeId,
                 'token':token,
                 'phone':phone
-                /*"userId":"164895c5bce1112","activeId":"169f369870c1114","phone":"18612986526"*/
+                /*"userId":"164895c5bce1112","activeId":"169f369870c1114","phone":"18612986527"*/
             }),
             dataType: "json",
             headers:{'Content-Type':'application/json'},
@@ -289,6 +292,22 @@
                         time:2
                     })
                 }
+                var i = 60;
+                function countDown() {
+                    i = i - 1;
+                    var getCode=document.getElementById("getCode");
+                    getCode.setAttribute("disabled","true");
+                    getCode.innerHTML="重新发送("+i+")";
+                    if (i === 0) {
+                        getCode.removeAttribute("disabled");
+                        getCode.innerHTML="发送验证";
+                        i = 60;
+                        clearTimeout(t);
+                        return;
+                    }
+                    var t=setTimeout(countDown,1000);
+                }
+                countDown();
             },
             error:function(data){
                 if(data.message==='失败'){

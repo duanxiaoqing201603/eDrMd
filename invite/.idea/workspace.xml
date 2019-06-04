@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c584a5e-4a39-40bc-babe-7fc465dcff85" name="Default Changelist" comment="领取记录对应图片，验证码">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/questiontest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/invite-register.html" beforeDir="false" afterPath="$PROJECT_DIR$/invite-register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tinified/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/tinified/6.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,17 +27,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/invite.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="697" lean-forward="true" selection-start-line="697" selection-end-line="697" />
+            <state relative-caret-position="240">
+              <caret line="678" column="9" selection-start-line="678" selection-start-column="9" selection-end-line="678" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/invite-register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="309" column="28" lean-forward="true" selection-start-line="309" selection-start-column="28" selection-end-line="309" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/invite-register.html">
+        <entry file="file://$PROJECT_DIR$/questiontest.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="341" column="30" lean-forward="true" selection-start-line="341" selection-start-column="30" selection-end-line="341" selection-end-column="30" />
+            <state relative-caret-position="306">
+              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -44,14 +62,17 @@
         <option value="$USER_HOME$/Desktop/invite.html" />
         <option value="$USER_HOME$/Desktop/invite-register.html" />
         <option value="$PROJECT_DIR$/invite.html" />
+        <option value="$USER_HOME$/Desktop/1.html" />
+        <option value="$PROJECT_DIR$/invite-register11.html" />
+        <option value="$PROJECT_DIR$/a.html" />
         <option value="$PROJECT_DIR$/invite-register.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="496" />
-    <option name="y" value="1" />
-    <option name="width" value="1056" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,6 +81,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -71,7 +93,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -79,6 +100,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\13电商项目实战（5天）\医得\活动\eDrMd\invite" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -104,7 +130,8 @@
       <updated>1559187737261</updated>
       <workItem from="1559187740345" duration="2591000" />
       <workItem from="1559291899569" duration="2168000" />
-      <workItem from="1559523362781" duration="1275000" />
+      <workItem from="1559523362781" duration="8454000" />
+      <workItem from="1559609130064" duration="6176000" />
     </task>
     <task id="LOCAL-00001" summary="点击立即下载没反映">
       <created>1559292815706</created>
@@ -117,13 +144,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6034000" />
+    <option name="totallyTimeSpent" value="19389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16032954" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11089987" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -150,31 +177,52 @@
     <option name="LAST_COMMIT_MESSAGE" value="点击立即下载没反映" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Desktop/invite.html" />
+    <entry file="file://$USER_HOME$/Desktop/invite-register.html" />
+    <entry file="file://$USER_HOME$/Desktop/aa.html" />
+    <entry file="file://$USER_HOME$/Desktop/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="273" lean-forward="true" selection-start-line="273" selection-end-line="273" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/invite-register11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4716">
+          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/invite.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="697" lean-forward="true" selection-start-line="697" selection-end-line="697" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/invite.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="685" column="25" lean-forward="true" selection-end-line="697" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/invite-register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="185" column="29" lean-forward="true" selection-end-line="360" />
+        <state relative-caret-position="240">
+          <caret line="678" column="9" selection-start-line="678" selection-start-column="9" selection-end-line="678" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/invite-register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="341" column="30" lean-forward="true" selection-start-line="341" selection-start-column="30" selection-end-line="341" selection-end-column="30" />
+        <state relative-caret-position="396">
+          <caret line="309" column="28" lean-forward="true" selection-start-line="309" selection-start-column="28" selection-end-line="309" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/questiontest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,36 @@
     <title>Title</title>
 </head>
 <body>
+<p id="getCode">获取验证</p>
 <script>
+    var getCode=document.getElementById("getCode");
+    var i = 10;
+    getCode.addEventListener('click',function(){
+        /*getCode.setAttribute("disabled",'true');
+        function countDown() {
+            i = i - 1;
+            getCode.innerHTML=i+"秒后重新发送";
+            if (i === 0) {
+                getCode.innerHTML="重新发送";
+                i = 10;
+                return;
+            }
+            setTimeout(countDown,1000);
+        }
+        countDown();*/
+        var timer=setInterval(function(){
+            if(i===0){
+                getCode.innerHTML="获取验证";
+                i=10;
+                clearInterval(timer);
+            }else{
+                i=i-1;
+                getCode.innerHTML="重新发送("+i+")";
+            }
+        },1000);
+    })
+
+
     //获取URL中的信息
     /*function GetRequest() {
         let url = location.href; //获取url中"?"符后的字串
@@ -47,7 +76,7 @@
     }
 
     console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));*/
-    function mutation(arr) {
+    /*function mutation(arr) {
         var astr=arr[0].toLowerCase();
         var bstr=arr[1].toLowerCase();
         for(var i=0;i<bstr.length;i++){
@@ -59,7 +88,7 @@
         }
     }
 
-    mutation(["hello", "hey"]);
+    mutation(["hello", "hey"]);*/
 </script>
 </body>
 </html>

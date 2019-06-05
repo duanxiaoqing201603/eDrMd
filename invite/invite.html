@@ -459,18 +459,10 @@
     }
     var Request = {};
     Request = GetRequest();// var id=Request["id"];
-    var activeId,userId,token,shareDesc,shareImg,shareTitle;
-    activeId = Request['activeId'];
-    userId = Request['userId'];
-    token = Request['token'];
-    shareDesc=Request['shareDesc'];
-    shareImg=Request['shareImg'];
-    shareTitle=Request['shareTitle'];
-
+    var activeId = Request['activeId'];
+    var userId = Request['userId'];
+    var token = Request['token'];
     //分享地址
-    var shareUrl = '';
-
-
 
     // 立即领取按钮点击事件
     var collectBthClick = function (alertArrary) {
@@ -539,7 +531,11 @@
                 }
             });
             return false;
-        })
+        });
+        var shareUrl;
+        var shareDesc;
+        var shareImg;
+        var shareTitle;
         $.ajax({
             url: IP+"/eDrMd_App/active/v3.0/invite/init",
             type: "post",
@@ -548,16 +544,17 @@
                 'userId':userId,
                 'activeId':activeId,
                 'token':token
-                // "userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"
+                /*"userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"*/
             }),
             dataType: "json",
             headers: {'Content-Type': 'application/json'},
             success: function (data) {
-                //console.log(data);
+                shareDesc=data.data.shareDesc;
+                shareImg=data.data.shareImg;
+                shareTitle=data.data.shareTitle;
                 shareUrl = data.data.shareUrl;
                 //弹出礼物领取
                 alertArrary = data.data.alertArray;//数组为空，表示已经领取，不再领取
-                //console.log(alertArrary.length);
                 var getGift = document.getElementById("getGift");
 
                 var days = document.getElementById("days");//领取会员的天数
@@ -571,7 +568,6 @@
                 giftClose.onclick=function (event) {
                     getGift.style.display = 'none';
                 };
-
                 //页面初始化
                 //var total = document.getElementById("total");//邀请人数的图片
                 var inviteNo = document.getElementById("inviteNo"), dayNo = document.getElementById("dayNo"); //inviteNo还差人数 dayNo会员天数
@@ -659,19 +655,6 @@
             });
         };
         var invite = document.getElementById("next");
-        /*//点击邀请好友，弹出分享
-    invite.addEventListener('click',function(e){
-        e.preventDefault();
-        let body=document.getElementById('loading');
-        body.style.display='block';
-        let share=document.getElementById("share");
-        share.style.display='block';
-        body.addEventListener('click',function (){
-            share.style.display='none';
-            body.style.display='none';
-        })
-    })*/
-
         /*invite.onclick=function (event) {
             event.preventDefault();
             event.stopPropagation();
@@ -691,19 +674,44 @@
             }
             document.body.removeChild(input);
         };*/
-
-        invite.onclick=function(){
-            clickShareButton({
+        /*var shareInfo=JSON.stringify({
+            'title':shareTitle,
+            'descr':shareDesc,
+            'thumImage':shareImg,
+            'webPageUrl':shareUrl});
+        console.log(shareTitle,shareDesc,shareImg,shareUrl);*/
+        function IOSClick(){
+            var shareInfo=JSON.stringify({
                 'title':shareTitle,
                 'descr':shareDesc,
                 'thumImage':shareImg,
-                'webPageUrl':shareUrl
-            });
-        };
+                'webPageUrl':shareUrl});
+            clickShareButton(shareInfo);
+        }
+        function androidClick(){
+            var shareInfo=JSON.stringify({
+                'title':shareTitle,
+                'descr':shareDesc,
+                'thumImage':shareImg,
+                'webPageUrl':shareUrl});
+            android.clickShareButton(shareInfo);
+        }
+
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //如果输出结果是true就判定是android终端或者uc浏览器
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //根据输出结果true或者false来判断ios终端
+//!!双叹号一般用来将后面的表达式转换为布尔型的数据（boolean）
+         if(isAndroid){
+             invite.addEventListener("click",androidClick,false);
+         }else if(isiOS){
+             invite.addEventListener("click",IOSClick,false);
+         }
+
+
         //解决图片点击预览(QQ浏览器)
         $("img").click(function(e){
             e.preventDefault();
-        })
+        });
     })
 </script>
 </html>

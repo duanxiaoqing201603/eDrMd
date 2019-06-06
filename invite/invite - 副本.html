@@ -462,8 +462,12 @@
     var activeId = Request['activeId'];
     var userId = Request['userId'];
     var token = Request['token'];
-    var appVersion=Request['appVersion'];
     //分享地址
+    var shareUrl = '';
+    var shareDesc;
+    var shareImg;
+    var shareTitle;
+
 
     // 立即领取按钮点击事件
     var collectBthClick = function (alertArrary) {
@@ -532,30 +536,29 @@
                 }
             });
             return false;
-        });
-        var shareUrl;
-        var shareDesc;
-        var shareImg;
-        var shareTitle;
+        })
         $.ajax({
             url: IP+"/eDrMd_App/active/v3.0/invite/init",
             type: "post",
             contentType: 'application/json',
             data: JSON.stringify({
-                'userId':userId,
+                /*'userId':userId,
                 'activeId':activeId,
-                'token':token
-                /*"userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"*/
+                'token':token*/
+                "userId": "164895c5bce1112", "activeId": "16ac91fda571112", "token": "1089055c3e7c1837c4fa17936a7425b9a"
             }),
             dataType: "json",
             headers: {'Content-Type': 'application/json'},
             success: function (data) {
+                console.log(data);
                 shareDesc=data.data.shareDesc;
                 shareImg=data.data.shareImg;
                 shareTitle=data.data.shareTitle;
                 shareUrl = data.data.shareUrl;
+                console.log(shareTitle,shareDesc,shareImg,shareUrl);
                 //弹出礼物领取
                 alertArrary = data.data.alertArray;//数组为空，表示已经领取，不再领取
+                //console.log(alertArrary.length);
                 var getGift = document.getElementById("getGift");
 
                 var days = document.getElementById("days");//领取会员的天数
@@ -656,69 +659,62 @@
             });
         };
         var invite = document.getElementById("next");
+        /*//点击邀请好友，弹出分享
+    invite.addEventListener('click',function(e){
+        e.preventDefault();
+        let body=document.getElementById('loading');
+        body.style.display='block';
+        let share=document.getElementById("share");
+        share.style.display='block';
+        body.addEventListener('click',function (){
+            share.style.display='none';
+            body.style.display='none';
+        })
+    })*/
 
-        /*var shareInfo=JSON.stringify({
+        /*invite.onclick=function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var input = document.createElement('input');
+            input.setAttribute('value', shareUrl);
+            input.setAttribute('readonly', 'readonly');
+            document.body.appendChild(input);
+            input.focus();
+            input.setSelectionRange(0, input.value.length);
+            if (document.execCommand('Copy')) {
+                document.execCommand('Copy');
+                layer.open({
+                    content: '链接已经复制成功，快去发送给你的朋友们吧~',
+                    btn: '好的',
+                    shadeClose: false
+                });
+            }
+            document.body.removeChild(input);
+        };*/
+        var shareInfo=JSON.stringify({
             'title':shareTitle,
             'descr':shareDesc,
             'thumImage':shareImg,
-            'webPageUrl':shareUrl});
-        console.log(shareTitle,shareDesc,shareImg,shareUrl);*/
+            'webPageUrl':shareUrl
+        });
+        console.log(shareTitle,shareDesc,shareImg,shareUrl);
         function IOSClick(){
-            var shareInfo=JSON.stringify({
-                'title':shareTitle,
-                'descr':shareDesc,
-                'thumImage':shareImg,
-                'webPageUrl':shareUrl});
             clickShareButton(shareInfo);
         }
         function androidClick(){
-            var shareInfo=JSON.stringify({
-                'title':shareTitle,
-                'descr':shareDesc,
-                'thumImage':shareImg,
-                'webPageUrl':shareUrl});
             android.clickShareButton(shareInfo);
         }
-
-        var u = navigator.userAgent, app = navigator.appVersion;
-        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //如果输出结果是true就判定是android终端或者uc浏览器
-        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //根据输出结果true或者false来判断ios终端
-//!!双叹号一般用来将后面的表达式转换为布尔型的数据（boolean）
-
-        if(appVersion==='300' || appVersion==='301' || appVersion==='3.0'){
-            invite.onclick=function (event) {
-                event.preventDefault();
-                event.stopPropagation();
-                var input = document.createElement('input');
-                input.setAttribute('value', shareUrl);
-                input.setAttribute('readonly', 'readonly');
-                document.body.appendChild(input);
-                input.focus();
-                input.setSelectionRange(0, input.value.length);
-                if (document.execCommand('Copy')) {
-                    document.execCommand('Copy');
-                    layer.open({
-                        content: '链接已经复制成功，快去发送给你的朋友们吧~',
-                        btn: '好的',
-                        shadeClose: false
-                    });
-                }
-                document.body.removeChild(input);
-            }
-        }else{
-            if(isAndroid){
-                invite.addEventListener("click",androidClick,false);
-            }else if(isiOS){
-                invite.addEventListener("click",IOSClick,false);
-            }
-        }
-
-
+        invite.addEventListener("click",IOSClick,false);
+        invite.addEventListener("click",androidClick,false);
 
         //解决图片点击预览(QQ浏览器)
         $("img").click(function(e){
             e.preventDefault();
-        });
+        })
+
+        function clickShareButton(shareInfo){
+            console.log(shareInfo);
+        }
     })
 </script>
 </html>

@@ -607,12 +607,11 @@
                     joined.innerText = 0;
                     dayNo.innerText=3;
                 }
-                if (inviteNum > 0 && inviteNum < 2) {
+                if (inviteNum > 0 && inviteNum < 3) {
                     inviteNo.innerText = 3 - inviteNum;
                     dayNo.innerText = 10;
                     //total.src = './tinified/1.png';
                     perSecond.innerText = 3;
-                } else if (inviteNum >= 2 && inviteNum < 5) {
                     inviteNo.innerText = 5 - inviteNum;
                     dayNo.innerText = 18;
                     //total.src = './tinified/2.png';
@@ -622,6 +621,7 @@
                     dayNo.innerText = 38;
                     //total.src = './tinified/3.png';
                     perSecond.innerText = 10;
+                } else if (inviteNum >= 3 && inviteNum < 5) {
                 } else if (inviteNum >= 10 && inviteNum < 15) {
                     inviteNo.innerText = 15 - inviteNum;
                     dayNo.innerText = 60;

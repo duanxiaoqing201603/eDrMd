@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"
+          content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0"/>
+		<title>签到得好礼</title>
+		<link rel="stylesheet" href="css/online.css"/>
+	</head>
+	<body>
+		<div class="mian_top"><img src = "img/pic_top.jpg" width = 100% ></div>
+		<div class="main">
+			<div class="main_pic">
+				<div class="main_pic_left">
+					<img class="imgMask" src="img/1.png">
+					<img src="img/3.png">
+					<img src="img/7.png">
+					<img src="img/12.png">
+				</div>
+				<div class="main_pic_right"><img src="img/21.png"></div>
+			</div>
+			<div class="main_word">
+				<h1>已连续学习<span id="day">&nbsp;3&nbsp;</span>天</h1>
+				<h2>连续学习的时间越长，获得的奖励越丰厚，<br>
+				是否领取奖励？</h2>
+			</div>
+			<button class="main_btn"></button>
+			<div class="main_list">
+				<h3>领取记录</h3>
+				<div class="recordNum">
+					<div class="recordOuter" id="recordOuter">
+						<ul class="recordUl" id="recordUl">
+						</ul>
+						<div class="recordU2" id="recordU2"></div>
+					</div>
+					<!--<div id="noRecord">没有领取记录</div>-->
+				</div>
+			</div>
+			<h4><a>活动详情请点击查阅</a></h4>
+		</div>
+		<div class="address" id="address">
+			<label class="label">收货人姓名</label><input placeholder="请输入收货人姓名" id="username">
+			<label class="label">收货人电话</label><input placeholder="请输入收货人电话" id="tel">
+			<label class="label">收货地址</label><textarea placeholder="请输入收货地址" id="getAdd"></textarea>
+			<div>
+				<button id="cancel">取消</button>
+				<button id="OK">确定</button>
+			</div>
+		</div>
+		<div class="loading" id="loading"></div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/layer-v3.1.1/layer/mobile/layer.js"></script>
+		<script src="js/online.js"></script>
+	</body>
+</html>

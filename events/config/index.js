@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',/*-------------打包部署改成./    默认为 /-----------------*/
+    assetsPublicPath: '/',/*-------------打包部署改成./    默认为 /-----------------*/
     proxyTable: {},
 
     // Various Dev Server settings
@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: './',/*-------------打包部署改成./    默认为 /-----------------*/
+    assetsPublicPath: '/',/*-------------打包部署改成./    默认为 /-----------------*/
 
     /**
      * Source Maps

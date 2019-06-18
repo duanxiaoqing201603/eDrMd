@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+img {
+    pointer-events: none;
+}
+
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 0.14rem;
+    background: #fff;
+    -webkit-touch-callout:none;/*系统默认菜单被禁用*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -khtml-user-select:none;/*早起浏览器*/
+    -moz-user-select:none;/*火狐浏览器*/
+    -ms-user-select:none;/*IE浏览器*/
+    user-select:none;/*用户是否能够选中文本*/
+    -webkit-touch-callout:none;
+
+}
+
+a, a:hover, a:active, a:target {
+    text-decoration: none;
+    color: #666;
+}
+button {
+    outline: none;
+    border: none;
+}
+input{
+    border:none;
+    outline:none;
+}
+ul ,li{
+    list-style: none;
+}
+.loading{
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 8;
+}
+.main{
+    background: -webkit-linear-gradient(#4c66f8, #2f4ad0); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#4c66f8, #2f4ad0); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#4c66f8, #2f4ad0); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#4c66f8, #2f4ad0); /* 标准的语法 */
+}
+.mian_top{
+    background-color: #4c66f8;
+    padding-bottom: 0.1rem;
+}
+.main_pic{
+    overflow: hidden;
+    width: 3.25rem;
+    margin: 0 auto;
+}
+.main_pic_left{
+    overflow: hidden;
+    width: 1.6rem;
+    float: left;
+}
+.main_pic_left img{
+    border-radius: 0;
+    position: relative;
+    float: left;
+    width: 0.75rem;
+    margin:0 0.05rem 0.05rem 0;
+}
+.main_pic_right{
+    float: right;
+}
+.main_pic_right img {
+    position: relative;
+    border-radius: 4px;
+    width: 1.55rem;
+}
+.main_word{
+    text-align: center;
+    color: #fff;
+}
+.imgMask{
+    border-radius: 8px;
+    position:absolute;
+    left:0;
+    top:0;
+    background: rgba(0,0,0,.5);
+    /*height: 100%;*/
+    width: 100%;
+}
+h1{
+    font-size: 0.25rem;
+}
+h1 span{
+    color: #ff8322;
+}
+h2{
+    font-size: 0.16rem;
+}
+h3{
+    text-align: center;
+    font-size: 0.16rem;
+    margin: 0.05rem 0;
+}
+h4{
+    font-size: 0.15rem;
+    text-align: center;
+    padding: 0.3rem;
+}
+h4 a{
+    color: #fff;
+}
+.main_btn{
+    width: 2.35rem;
+    height: 0.5rem;
+    margin: 0 auto;
+    display: block;
+    background-image: url("../img/main_btn.png");
+    background-size: 100%;
+    background-color: rgba(255,255,255,0);
+    margin-top:0.15rem;
+    margin-bottom: 0.35rem;
+}
+.main_list{
+    width: 3.25rem;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    color: #7b7b7b;
+    padding: 0.1rem;
+    height:1.25rem;
+    overflow: hidden;
+}
+.main_list ul{
+    margin-top: 0.1rem;
+
+}
+.recordOuter{
+    width:100%;
+    height:1.25rem;
+    overflow: hidden;
+}
+.recordOuter ul li{
+
+}
+.recordUl li,.recordU2 li{
+    line-height: 0.18rem;
+    font-size: 0.11rem;
+    margin: 0.05rem 0;
+}
+.address{
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin:-2rem 0 0 -40%;
+    display: none;
+    width:70%;
+    padding:1% 5%;
+    height:3.5rem;
+    background:#fff;
+    border-radius: 0.1rem;
+    font-size: 0.14rem;
+    z-index: 9;
+}
+.address .label{
+    display: block;
+    width:100%;
+    margin:0.2rem 0 0.02rem 0;
+}
+.address input{
+    border:0.01rem solid #c1c1c1;
+    height:0.3rem;
+    width:95%;
+    border-radius: 0.04rem;
+    padding-left: 0.05rem;
+}
+.address textarea{
+    height:0.8rem;
+    border:0.01rem solid #c1c1c1;
+    width:95%;
+    border-radius: 0.04rem;
+    padding:0.02rem 0 0 0.05rem;
+    outline: none;
+}
+.address div{
+    margin-top: 0.15rem;
+    text-align: center;
+}

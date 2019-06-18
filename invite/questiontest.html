@@ -3,15 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .triangle{
+            display: block;
+            width:0;
+            border-right:50px solid red;
+            border-left:50px solid transparent;
+            border-top:50px solid transparent;
+            border-bottom:50px solid transparent;
+        }
+    </style>
 </head>
-<body>
-<p id="getCode">获取验证</p>
-<p id="invite">aa</p>
+<body id="body">
+<!--<p id="getCode">获取验证</p>
+<p id="invite">aa</p>-->
+<!--<span class="triangle"></span>-->
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
 <script>
-    var getCode=document.getElementById("getCode");
+    let op = document.getElementsByTagName('li')
+    /*for(let i = 0 ; i < op.length ; i ++){
+        op[i].onclick = function(){
+            console.log(op[i].innerHTML)
+        }
+    }*/
+    for(var i = 0 ; i < op.length ; i ++ ){
+        (function(i){
+            op[i].onclick = function(){
+                console.log(op[i].innerHTML)
+            }
+        })(i)
+    }
+
+   /* var getCode=document.getElementById("getCode");
     var i = 10;
     getCode.addEventListener('click',function(){
-        /*getCode.setAttribute("disabled",'true');
+        /!*getCode.setAttribute("disabled",'true');
         function countDown() {
             i = i - 1;
             getCode.innerHTML=i+"秒后重新发送";
@@ -22,7 +57,7 @@
             }
             setTimeout(countDown,1000);
         }
-        countDown();*/
+        countDown();*!/
         var timer=setInterval(function(){
             if(i===0){
                 getCode.innerHTML="获取验证";
@@ -33,8 +68,7 @@
                 getCode.innerHTML="重新发送("+i+")";
             }
         },1000);
-    })
-
+    })*/
     /*function aa(){
         console.log(2);
     }
@@ -107,6 +141,78 @@
     }
 
     mutation(["hello", "hey"]);*/
+/*    f=function(){
+        return true;
+    };
+    g=function(){
+        return false;
+    };
+   (function(){
+       if(g && []==![]){
+           f=function f(){
+               return false;
+           }
+       }
+   })();
+   console.log(f());
+
+   var num=10;
+   var obj={
+       num:8,
+       inner:{
+           num:6,
+           print:function(){
+               console.log(this.num);
+           }
+       }
+   };
+   num=888;
+   obj.inner.print();
+   var fn=obj.inner.print;
+   fn();
+   (obj.inner.print)();
+   //console.log(obj.inner.print);
+   (obj.inner.print=obj.inner.print)();
+   //console.log(obj.inner.print=obj.inner.print)
+    //深复制函数
+   function deepClone(obj){
+       let objClone = Array.isArray(obj)?[]:{};
+       if(obj && typeof obj==="object"){
+           for(key in obj){
+               if(obj.hasOwnProperty(key)){
+                   //判断ojb子元素是否为对象，如果是，递归复制
+                   if(obj[key]&&typeof obj[key] ==="object"){
+                       objClone[key] = deepClone(obj[key]);
+                   }else{
+                       //如果不是，简单复制
+                       objClone[key] = obj[key];
+                   }
+               }
+           }
+       }
+       return objClone;
+       //return JSON.parse(JSON.stringify(obj));
+   }
+   let a={
+       name:'Lily',
+       age:18,
+       inner:{
+           sex:'male'
+       }
+   }//a=[1,2,3,4],
+       b=deepClone(a);
+   a.inner.sex='Lucy';
+   console.log(a,b);*/
+   function test(m){
+       m={v:5};
+   }
+   m={k:30};
+   test(m);
+   alert(m.v);
+   ~function(){
+       var a=1;
+       console.log(a);
+   }();
 </script>
 </body>
 </html>

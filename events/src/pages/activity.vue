@@ -111,7 +111,7 @@
       //console.log(this.activeId,this.userId,this.token);
       //获取礼物信息59.110.163.242   39.105.11.4
       this.$axios.post('http://'+this.IP+'/eDrMd_App/active/v3.0/online/init',
-        {"userId":this.userId,"token":this.token,"activeId":this.activeId},
+        {"userId":"164895c5bce1112","token":"1089055c3e7c1837c4fa17936a7425b9a","activeId":"169f369870c1114"},
         {headers:{'Content-Type': 'application/json'}}).then(res=>{
         // 响应成功回调
         //"userId":this.userId,"token":this.token,"activeId":this.activeId

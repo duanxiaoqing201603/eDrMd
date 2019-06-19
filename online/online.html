@@ -1,56 +1,82 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport"
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
           content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0"/>
-		<title>签到得好礼</title>
-		<link rel="stylesheet" href="css/online.css"/>
-	</head>
-	<body>
-		<div class="mian_top"><img src = "img/pic_top.jpg" width = 100% ></div>
-		<div class="main">
-			<div class="main_pic">
-				<div class="main_pic_left">
-					<img class="imgMask" src="img/1.png">
-					<img src="img/3.png">
-					<img src="img/7.png">
-					<img src="img/12.png">
-				</div>
-				<div class="main_pic_right"><img src="img/21.png"></div>
-			</div>
-			<div class="main_word">
-				<h1>已连续学习<span id="day">&nbsp;3&nbsp;</span>天</h1>
-				<h2>连续学习的时间越长，获得的奖励越丰厚，<br>
-				是否领取奖励？</h2>
-			</div>
-			<button class="main_btn"></button>
-			<div class="main_list">
-				<h3>领取记录</h3>
-				<div class="recordNum">
-					<div class="recordOuter" id="recordOuter">
-						<ul class="recordUl" id="recordUl">
-						</ul>
-						<div class="recordU2" id="recordU2"></div>
-					</div>
-					<!--<div id="noRecord">没有领取记录</div>-->
-				</div>
-			</div>
-			<h4><a>活动详情请点击查阅</a></h4>
-		</div>
-		<div class="address" id="address">
-			<label class="label">收货人姓名</label><input placeholder="请输入收货人姓名" id="username">
-			<label class="label">收货人电话</label><input placeholder="请输入收货人电话" id="tel">
-			<label class="label">收货地址</label><textarea placeholder="请输入收货地址" id="getAdd"></textarea>
-			<div>
-				<button id="cancel">取消</button>
-				<button id="OK">确定</button>
-			</div>
-		</div>
-		<div class="loading" id="loading"></div>
+    <title>签到得好礼</title>
+    <link rel="stylesheet" href="css/online.css"/>
+</head>
+<body>
+<div class="mian_top"><img src="img/pic_top.jpg" width=100%></div>
+<div class="main">
+    <h1>已连续学习<span id="day">&nbsp;3&nbsp;</span>天</h1>
+    <div class="main_pic">
+        <div class="main_pic_left">
+            <ul>
+                <li><img alt=""/><em class="imgMask"></em></li>
+                <li><img alt=""/><em class="imgMask"></em></li>
+                <li><img alt=""/><em class="imgMask"></em></li>
+                <li><img alt=""/><em class="imgMask"></em></li>
+            </ul>
+            <!--<img class="imgMask" src="img/1.png">
+            <img src="img/3.png">
+            <img src="img/7.png">
+            <img src="img/12.png">-->
+        </div>
+        <div class="main_pic_right"><img alt=""/><em class="imgMask"></em></div>
+    </div>
+</div>
+<div class="main_two">
+    <div class="main_word">
+        连续学习的时间越长，获得的奖励越丰厚，<br>
+        是否领取奖励？
+    </div>
+    <button class="main_btn" id="main_btn"></button>
+    <div class="main_lqjl">
+        <img src="img/lqjl.png"/>
+    </div>
+    <div class="main_list">
+        <div class="recordNum">
+            <div class="recordOuter" id="recordOuter">
+                <ul class="recordUl" id="recordUl">
+                </ul>
+                <div class="recordU2" id="recordU2"></div>
+            </div>
+            <div id="noRecord" class="noRecord">没有领取记录</div>
+        </div>
+    </div>
+    <div class="main_lqjl">
+        <img src="img/hdgz.png"/>
+    </div>
+    <div class="main_hdgz">
+        <ul>
+            <li>为回馈广大用户，医得平台推出连续学习赢豪礼活动，学习天数越多赢得礼品越就越丰厚。</li>
+            <li>1、参加此活动的用户每天须连续在线十分钟以上为当天打卡成功。</li>
+            <li>2、连续打卡1天可领小镜子、3天可领杯子、7天可领AR图书、12天可领书签、21天可领魔方分别获得不同奖品。</li>
+            <li>3、奖品领取后学习时长自动清零，用户每次只能领当前学习时长的奖品。</li>
+            <li>4、用户获得奖品后需要领取，填写邮递地址及领取成功。每月可免费邮寄一次，再次邮寄须自付邮费。</li>
+            <li>5、系统不定期更换价值相近的奖品。</li>
+            <li>6、本活动仅限会员用户参与。医得平台每周为所有用户统一邮寄。</li>
+            <li>7、本活动最终解释权由北京博雅君益健康管理有限公司所有。</li>
+        </ul>
+    </div>
+</div>
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/layer-v3.1.1/layer/mobile/layer.js"></script>
-		<script src="js/online.js"></script>
-	</body>
+
+<div class="address" id="address">
+    <label class="label">收货人姓名</label><input placeholder="请输入收货人姓名" id="username">
+    <label class="label">收货人电话</label><input placeholder="请输入收货人电话" id="tel">
+    <label class="label">收货地址</label><textarea placeholder="请输入收货地址" id="getAdd"></textarea>
+    <div>
+        <button id="cancel">取消</button>
+        <button id="OK">确定</button>
+    </div>
+</div>
+<div class="loading" id="loading"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/layer-v3.1.1/layer/mobile/layer.js"></script>
+<script src="js/online.js"></script>
+</body>
 </html>

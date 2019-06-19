@@ -21,28 +21,31 @@ activeId = Request['activeId'];
 userId = Request['userId'];
 token = Request['token'];
 let IP="http://39.105.11.4";
-let isVip,giftId;
+let isVip,giftId,day;
 $.ajax({
     url:'http://39.105.11.4/eDrMd_App/active/v3.0/online/init',
     type:'post',
     contentType:'application/json',
     data:JSON.stringify({
-        /*'userId':userId,
+        'userId':userId,
         'token':token,
-        'activeId':activeId*/
-        "userId":"164895c5bce1112","token":"1089055c3e7c1837c4fa17936a7425b9a","activeId":"169f369870c1114"
+        'activeId':activeId
+        /*"userId":"164895c5bce1112","token":"1089055c3e7c1837c4fa17936a7425b9a","activeId":"169f369870c1114"*/
     }),
     dataType:'json',
     headers:{'Content-Type':'application/json'},
     success:function(res){
         console.log(res);
         let data=res.data;
-        let day=data.day;
+        day=data.day;
         let presentData=data.giftData;
         isVip=data.isVip;
         giftId=data.userGift.id;
         $('#day').html('&nbsp'+day+'&nbsp');
         $(document).attr('title',data.name);
+        if(day===0 || !data.userGift){
+            $('#main_btn').attr('disabled',true).addClass('btn_dis');
+        }
         let record=data.recordData;
         if(record){
             let str='';
@@ -64,29 +67,18 @@ $.ajax({
                 }
                 var MyMar = setInterval(Marquee, 40);
             }();
+        }else{
+            $('#recordOuter').hide();
+            $('#noRecord').show();
         }
         //礼物对应图片
-        let images=$('.main_pic_left img'),right=$('.main_pic_right img');
+        let images=$('.main_pic img'),ems=$('.main_pic em');
         for(let i=0;i<presentData.length;i++){
-            if(i===4){
-                right.attr('src',presentData[i].image)
-                if(giftId!==presentData[i].id){
-                    right.addClass('imgMask');
-                }else{
-                    right.removeClass('imgMask');
-                }
-            }else{
-                images.eq(i).attr('src',presentData[i].image);
-                if(giftId!==presentData[i].id){
-                    images.eq(i).addClass('imgMask');
-                }else{
-                    images.eq(i).removeClass('imgMask');
-                }
+            images.eq(i).attr('src',presentData[i].image);
+            if(giftId===presentData[i].id && day!==0){
+                ems.eq(i).hide().siblings().show();
             }
-
         }
-
-        //$('.main_pic_right img').attr('src',presentData[4].image);
 
     }
 });
@@ -99,6 +91,7 @@ $('.main_btn').click(function(){
         });
         return false;
     }
+
     $('#address').show();
     $('#loading').show();
 });
@@ -149,9 +142,7 @@ $('#OK').click(function(){
             'realName':username,
             'phone':tel,
             'address':getAdd
-/*
-            "userId": "164895c5bce1112", "token": "1089055c3e7c1837c4fa17936a7425b9a", "activeId": "169f369870c1114"
-*/
+            /*"userId": "164895c5bce1112", "token": "1089055c3e7c1837c4fa17936a7425b9a", "activeId": "169f369870c1114"*/
         }),
         dataType: 'json',
         headers: {'Content-Type': 'application/json'},
@@ -168,15 +159,23 @@ $('#OK').click(function(){
         type:'post',
         contentType:'application/json',
         data:JSON.stringify({
-            /*'userId':userId,
+            'userId':userId,
             'token':token,
-            'activeId':activeId*/
-            "userId":"164895c5bce1112","token":"1089055c3e7c1837c4fa17936a7425b9a","activeId":"169f369870c1114"
+            'activeId':activeId
+            /*"userId":"164895c5bce1112","token":"1089055c3e7c1837c4fa17936a7425b9a","activeId":"169f369870c1114"*/
         }),
         dataType:'json',
         headers:{'Content-Type':'application/json'},
         success:function(res){
-
+            let presentData=res.data.giftData;
+            let images=$('.main_pic img'),ems=$('.main_pic em');
+            for(let i=0;i<presentData.length;i++){
+                ems.eq(i).show();
+            }
+            $('#day').html('&nbsp'+0+'&nbsp');
+            if(day===0 || !data.userGift){
+                $('#main_btn').attr('disabled',true).addClass('btn_dis');
+            }
         }
     });
     $('#address').hide();
